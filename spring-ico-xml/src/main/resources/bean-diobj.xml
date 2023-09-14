@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="dept" class="com.slm.spring.iocxml.DIobj.Dept">
+        <property name="name" value="教学部"></property>
+    </bean>
+
+    <bean id="emp" class="com.slm.spring.iocxml.DIobj.Emp">
+        <property name="name" value="张三"></property>
+        <property name="age" value="21"></property>
+        <property name="dept" ref="dept"></property>
+    </bean>
+
+
+    <bean id="emp2" class="com.slm.spring.iocxml.DIobj.Emp">
+        <property name="name" value="张三"></property>
+        <property name="age" value="21"></property>
+        <property name="dept">
+            <bean id="dept2" class="com.slm.spring.iocxml.DIobj.Dept">
+                <property name="name" value="教学部"></property>
+            </bean>
+        </property>
+    </bean>
+
+
+    <bean id="dept3" class="com.slm.spring.iocxml.DIobj.Dept">
+        <property name="name" value="教学部"></property>
+    </bean>
+
+    <bean id="emp3" class="com.slm.spring.iocxml.DIobj.Emp">
+        <property name="name" value="张三"></property>
+        <property name="age" value="21"></property>
+        <property name="dept" ref="dept3"></property>
+        <property name="loves">
+            <array>
+                <value>吃饭</value>
+                <value>睡觉</value>
+                <value>打豆豆</value>
+            </array>
+        </property>
+    </bean>
+
+    <bean id="dept5" class="com.slm.spring.iocxml.DIobj.Dept">
+        <property name="name" value="教学部"></property>
+        <property name="empList">
+            <list>
+                <ref bean="emp"></ref>
+                <ref bean="emp2"></ref>
+                <ref bean="emp3"></ref>
+            </list>
+        </property>
+    </bean>
+
+
+    <bean id="emp5" class="com.slm.spring.iocxml.DIobj.Emp"></bean>
+
+
+
+
+
+
+
+
+
+</beans>

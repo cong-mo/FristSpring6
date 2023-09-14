@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <bean id="lessons1" class="com.slm.spring.iocxml.diutil.Lessons">
+        <property name="name" value="Java"></property>
+    </bean>
+
+    <bean id="lessons2" class="com.slm.spring.iocxml.diutil.Lessons">
+        <property name="name" value="Linux"></property>
+    </bean>
+
+    <bean id="lessons3" class="com.slm.spring.iocxml.diutil.Lessons">
+        <property name="name" value="Python"></property>
+    </bean>
+
+    <bean id="stu1" class="com.slm.spring.iocxml.diutil.Students">
+        <property name="id" value="1001"></property>
+        <property name="name" value="张三"></property>
+        <property name="lessonsList" ref="list1"></property>
+    </bean>
+
+    <util:list id="list1">
+        <ref bean="lessons1"></ref>
+        <ref bean="lessons2"></ref>
+        <ref bean="lessons3"></ref>
+    </util:list>
+</beans>

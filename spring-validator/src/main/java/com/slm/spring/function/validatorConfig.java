@@ -1,0 +1,16 @@
+package com.slm.spring.function;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.validation.beanvalidation.MethodValidationPostProcessor;
+
+@Configuration
+@ComponentScan("com.slm.spring")
+public class validatorConfig {
+
+    @Bean
+    public MethodValidationPostProcessor methodValidationPostProcessor(){
+        return new MethodValidationPostProcessor();
+    }
+}
