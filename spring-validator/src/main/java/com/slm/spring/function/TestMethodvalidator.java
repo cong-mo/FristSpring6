@@ -14,6 +14,5 @@ public class TestMethodvalidator {
         people.setName("llj");
         mycontrollerValidator.testParams(people);
         System.out.println(people.toString());
-        System.out.println(people.toString());
     }
 }
