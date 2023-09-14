@@ -12,3 +12,5 @@
 
 依赖注入(Dependency Injection, DI)是一种设计模式，也是Spring框架的核心概念之一。
 其作用是去除Java类之间的依赖关系，实现松耦合，以便于开发测试。为了更好地理解DI，先了解DI要解决的问题。
+
+push test!
